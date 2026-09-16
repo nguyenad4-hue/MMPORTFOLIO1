@@ -1,0 +1,232 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Portfolio | Home</title>
+    <style>
+        /* Base Styles and Colors */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* Crisp white text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a; /* Dark gray navbar */
+            border-bottom: 2px solid #333333; /* Lighter gray accent border */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff; /* Turns bright white on hover/active */
+            border-bottom: 2px solid #666666; /* Lighter gray accent underline */
+        }
+
+        /* Responsive Header Slideshow Banner */
+        .banner-container {
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #333333;
+        }
+        .slides-wrapper {
+            display: flex;
+            width: 400%; /* 4 images = 400% width */
+            height: 100%;
+            animation: slideAnimation 16s infinite;
+        }
+        .slide {
+            width: 25%; /* Each slide takes up 1/4 of the wrapper */
+            height: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps images from stretching ugly */
+        }
+        
+        /* CSS Animation for Automatic Sliding */
+        @keyframes slideAnimation {
+            0% { transform: translateX(0%); }
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-25%); }
+            45% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            70% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            95% { transform: translateX(-75%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* Main Content Layout */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .profile-card {
+            background-color: #121212; /* Dark gray content card */
+            border: 1px solid #222222; /* Lighter gray accent border */
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .profile-image-wrapper {
+            flex: 0 0 250px; /* Keeps the image at a fixed width */
+        }
+        .profile-image-wrapper img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes image circular */
+            border: 3px solid #444444; /* Lighter gray accent frame */
+        }
+        .profile-text {
+            flex: 1;
+        }
+        .profile-text h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 10px;
+        }
+        .profile-text p {
+            margin-bottom: 15px;
+            color: #dddddd;
+            font-size: 1.05rem;
+        }
+        .profile-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design for Smaller Screens (Tablets/Phones) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .slideshow {
+                height: 200px; /* Smaller banner on mobile */
+            }
+            .profile-card {
+                flex-direction: column; /* Stack image on top of text */
+                text-align: center;
+            }
+            .profile-image-wrapper {
+                flex: 0 0 auto;
+            }
+            .profile-text h1 {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Multimedia Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="photoshop.html">Photoshop</a></li>
+                <li><a href="illustrator.html">Illustrator</a></li>
+                <li><a href="premiere.html">Premiere Pro Videos</a></li>
+                <li><a href="animation.html">Animation</a></li>
+                <li><a href="final.html">Final Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Banner Slideshow -->
+    <div class="banner-container">
+        <header class="slideshow">
+            <div class="slides-wrapper">
+                <div class="slide"><img src="spiderman.png" alt="Spiderman Project Artwork"></div>
+                <div class="slide"><img src="penguin.png" alt="Penguin Design Project"></div>
+                <div class="slide"><img src="fullbox.png" alt="Fullbox Graphic Template"></div>
+                <div class="slide"><img src="mountain.png" alt="Mountain Landscape Vector"></div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Profile Content Section -->
+    <main>
+        <section class="profile-card">
+            
+            <!-- Left Side: Profile Image -->
+            <div class="profile-image-wrapper">
+                <img src="andrew.jpg" alt="Andrew's Profile Picture">
+            </div>
+            
+            <!-- Right Side: Text Paragraphs -->
+            <div class="profile-text">
+                <h1>Welcome to My Portfolio</h1>
+                
+                <!-- Paragraph 1: Purpose of the portfolio -->
+                <p>
+                    <!-- INSERT TEXT HERE: Explain that the purpose of this portfolio is to showcase the unique design skills, digital media assets, and projects you have learned to create throughout your Multimedia class. -->
+                </p>
+                
+                <!-- Paragraph 2: Current skills and future plans -->
+                <p>
+                    <!-- INSERT TEXT HERE: Detail your current digital skills, creative strengths, and describe specific tools or techniques you plan to learn and master as the class progresses. -->
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
